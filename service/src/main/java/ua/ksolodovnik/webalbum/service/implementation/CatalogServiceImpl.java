@@ -90,6 +90,7 @@ public class CatalogServiceImpl implements CatalogService{
             albumList.add(album);
             catalog.setAlbums(albumList);
             album.setCatalog(catalog);
+            saveCatalog(catalog);
         } else {
             throw new CatalogException("Category do not match");
         }
