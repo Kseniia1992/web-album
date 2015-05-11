@@ -20,7 +20,7 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
-@ContextConfiguration(locations = "file:domain/src/main/resources/applicationContext.xml")
+@ContextConfiguration(locations = "file:web/src/main/webapp/WEB-INF/applicationContext.xml")
 @RunWith(SpringJUnit4ClassRunner.class)
 @TransactionConfiguration(defaultRollback=true,transactionManager="transactionManager")
 public class TestCatalogService {
