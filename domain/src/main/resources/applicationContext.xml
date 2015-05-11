@@ -37,6 +37,6 @@
         <property name="dataSource" ref="dataSource"></property>
     </bean>
 
-    <jpa:repositories base-package="ua.ksolodovnik.webalbum.repository" entity-manager-factory-ref="entityManagerFactory" />
+    <jpa:repositories base-package="ua.ksolodovnik.webalbum.repository" entity-manager-factory-ref="entityManagerFactory"/>
 
 </beans>
