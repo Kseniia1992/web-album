@@ -5,7 +5,6 @@
 
     <display-name>web-album</display-name>
     <welcome-file-list>
-        <welcome-file>picture.jsp</welcome-file>
         <welcome-file>picture.html</welcome-file>
     </welcome-file-list>
 
@@ -17,6 +16,9 @@
     <servlet-mapping>
         <servlet-name>dispatcher</servlet-name>
         <url-pattern>*.html</url-pattern>
+        <url-pattern>*.htm</url-pattern>
+        <url-pattern>*.json</url-pattern>
+        <url-pattern>*.xml</url-pattern>
     </servlet-mapping>
 
     <listener>

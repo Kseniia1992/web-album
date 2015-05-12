@@ -1,5 +1,7 @@
 package ua.ksolodovnik.webalbum.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Arrays;
@@ -25,7 +27,7 @@ public class Photo implements Serializable {
     @Column(name = "addition_date")
     private Date additionDate;
 
-    @ManyToMany(mappedBy = "photos")
+    @ManyToMany(mappedBy = "photos", fetch = FetchType.EAGER)
     private List<Album> albums;
 
     public Photo(){
@@ -48,6 +50,7 @@ public class Photo implements Serializable {
         this.name = name;
     }
 
+    @JsonIgnore
     public byte[] getImage() {
         return image;
     }

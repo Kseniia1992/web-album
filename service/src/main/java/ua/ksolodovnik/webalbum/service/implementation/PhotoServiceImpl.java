@@ -9,6 +9,7 @@ import ua.ksolodovnik.webalbum.entity.Photo;
 import ua.ksolodovnik.webalbum.repository.PhotoRepository;
 import ua.ksolodovnik.webalbum.service.PhotoService;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -87,5 +88,17 @@ public class PhotoServiceImpl implements PhotoService {
     public List<Photo> getLatestPhoto(){
         return photoRepository.getLatestPhoto();
     }
+
+    @Override
+    @Transactional
+    public List<byte[]> getAllImages() {
+        List<Photo> photoList = photoRepository.findAll();
+        List<byte[]> byteList = new ArrayList<>();
+        for(Photo photo : photoList){
+            byteList.add(photo.getImage());
+        }
+        return byteList;
+    }
+
 
 }

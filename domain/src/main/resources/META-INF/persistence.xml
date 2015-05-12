@@ -13,8 +13,9 @@
             <property name="hibernate.connection.username" value="admin"/>
             <property name="hibernate.connection.password" value="admin"/>
             <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQL82Dialect"/>
-            <property name="hibernate.hbm2ddl.auto" value="create"/>
-            <property name="hibernate.connection.autocommit" value="false" />
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
+       <!--     <property name="hibernate.connection.autocommit" value="false" />   -->
+            <property name="hibernate.temp.use_jdbc_metadata_defaults" value="false" />
         </properties>
     </persistence-unit>
 </persistence>

@@ -26,7 +26,7 @@ import static org.junit.Assert.assertTrue;
 
 @ContextConfiguration(locations = "file:web/src/main/webapp/WEB-INF/applicationContext.xml")
 @RunWith(SpringJUnit4ClassRunner.class)
-@TransactionConfiguration(defaultRollback=true,transactionManager="transactionManager")
+@TransactionConfiguration(defaultRollback = true, transactionManager="transactionManager")
 public class TestPhotoService {
 
     @Autowired
@@ -77,6 +77,12 @@ public class TestPhotoService {
     }
 
     @Test
+    public void testGetAllImages(){
+        List<byte[]> bytes = photoService.getAllImages();
+        assertNotNull(bytes);
+    }
+
+    @Test
     public void testGetPhotoById(){
         photo1 = photoService.getPhotoById(1L);
         assertNotNull(photo1);
@@ -120,4 +126,5 @@ public class TestPhotoService {
         photoList = photoService.getAllPageble();
         assertTrue(photoList.size() == photoListSize-1);
     }
+
 }

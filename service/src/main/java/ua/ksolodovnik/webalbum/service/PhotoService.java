@@ -19,4 +19,6 @@ public interface PhotoService {
 
     List<Photo> getLatestPhoto();
 
+    List<byte[]> getAllImages();
+
 }
