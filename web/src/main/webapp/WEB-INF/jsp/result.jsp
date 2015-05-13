@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
     <link href="jumbotron-narrow.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css"/>
+    <link rel="stylesheet" href="static/css/styles.css"/>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
     <script type="text/javascript" src="webjars/angularjs/1.3.8/angular-resource.min.js"></script>
@@ -61,7 +61,7 @@
     </table>
 </div>
 
-<script src="js/app.js"></script>
+<script src="static/js/app.js"></script>
 
 </body>
 </html>

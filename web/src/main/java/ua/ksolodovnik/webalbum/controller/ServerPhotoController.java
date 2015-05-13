@@ -2,6 +2,7 @@ package ua.ksolodovnik.webalbum.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -11,7 +12,6 @@ import ua.ksolodovnik.webalbum.entity.Photo;
 import ua.ksolodovnik.webalbum.service.PhotoService;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -25,20 +25,18 @@ public class ServerPhotoController {
     @Autowired
     PhotoService photoService;
 
-    @ModelAttribute
-    public List<Photo> createPhotoList(){
-        List<Photo> list = new ArrayList<>();
-        return list;
+    @ModelAttribute("photo")
+    public Photo createPhotoList(){
+        return new Photo();
     }
 
-/*  THIS METHOD WORKS
+/*  THIS METHOD WORKS  */
 
     @RequestMapping(value = "/result", method = RequestMethod.GET)
-    public String showPhotosInfo(Model model){
+    public String showPhotos(Model model){
         model.addAttribute("photos", photoService.getAllPageble());
         return "/result";
     }
-*/
 
     /**
      * REST method sends json to client
