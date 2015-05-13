@@ -34,7 +34,8 @@
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li><a href="/web-album/picture.html">File Upload</a></li>
-                    <li><a href="/web-album/result.html">Photo</a></li>
+                    <li><a href="/web-album/result.html">Photo - Doesn't work</a></li>
+                    <li><a href="/web-album/allresult.html">Photo - Works</a></li>
                 </ul>
             </div><!--/.nav-collapse -->
         </div><!--/.container-fluid -->
@@ -42,7 +43,7 @@
 </div>
 
 <div align="center">
-    <form:form method="post" action="/web-album/result.html" modelAttribute="file" enctype="multipart/form-data">
+    <form:form method="post" action="/web-album/allresult.html" modelAttribute="file" enctype="multipart/form-data">
         <h1>Web Album - File Upload</h1>
         <div class="form-group">
             <input type="file" name="file">
