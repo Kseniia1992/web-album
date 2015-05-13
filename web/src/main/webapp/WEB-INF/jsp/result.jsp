@@ -2,7 +2,7 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <!DOCTYPE html>
-<html ng-app="webAlbum">
+<html ng-app="app">
 <head>
 
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -17,7 +17,7 @@
 
 </head>
 
-<body ng-controller="PhotoController">
+<body ng-controller="photoCtrl">
 
 <div class="container">
 
@@ -36,7 +36,8 @@
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li><a href="/web-album/picture.html">File Upload</a></li>
-                    <li><a href="/web-album/result.html">Photo</a></li>
+                    <li><a href="/web-album/result.html">Photo - Doesn't work</a></li>
+                    <li><a href="/web-album/allresult.html">Photo - Works</a></li>
                 </ul>
             </div><!--/.nav-collapse -->
         </div><!--/.container-fluid -->

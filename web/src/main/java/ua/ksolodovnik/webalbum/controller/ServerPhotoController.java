@@ -30,12 +30,17 @@ public class ServerPhotoController {
         return new Photo();
     }
 
+    @RequestMapping(value = "/test", method = RequestMethod.GET)
+    public String showTestPage(){
+        return "test";
+    }
+
 /*  THIS METHOD WORKS  */
 
-    @RequestMapping(value = "/result", method = RequestMethod.GET)
+    @RequestMapping(value = "/allresult", method = RequestMethod.GET)
     public String showPhotos(Model model){
         model.addAttribute("photos", photoService.getAllPageble());
-        return "/result";
+        return "/allresult";
     }
 
     /**
@@ -63,13 +68,13 @@ public class ServerPhotoController {
      * @return
      * @throws IOException
      */
-    @RequestMapping(value = "/result", method = RequestMethod.POST)
+    @RequestMapping(value = "/allresult", method = RequestMethod.POST)
     public String doUpload(MultipartFile file, @ModelAttribute("photo") Photo photo) throws IOException {
         if (file != null) {
             photo.setName(file.getOriginalFilename());
             photo.setImage(file.getBytes());
             photoService.savePhoto(photo);
         }
-        return "redirect:result.html";
+        return "redirect:allresult.html";
     }
 }

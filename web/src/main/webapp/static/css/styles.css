@@ -1,4 +1,9 @@
-.table{
+.content{
     width: 88%;
 }
 
+.form{
+    padding-left: 30%;
+    padding-right: 30%;
+    padding-top: 5%;
+}

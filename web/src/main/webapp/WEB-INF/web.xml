@@ -5,7 +5,7 @@
 
     <display-name>web-album</display-name>
     <welcome-file-list>
-        <welcome-file>picture.html</welcome-file>
+        <welcome-file>test.html</welcome-file>
     </welcome-file-list>
 
     <servlet>
