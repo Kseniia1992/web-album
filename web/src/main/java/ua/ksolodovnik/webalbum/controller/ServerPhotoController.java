@@ -2,6 +2,7 @@ package ua.ksolodovnik.webalbum.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -10,6 +11,7 @@ import ua.ksolodovnik.webalbum.entity.Photo;
 import ua.ksolodovnik.webalbum.service.PhotoService;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -23,7 +25,11 @@ public class ServerPhotoController {
     @Autowired
     PhotoService photoService;
 
-
+    @ModelAttribute
+    public List<Photo> createPhotoList(){
+        List<Photo> list = new ArrayList<>();
+        return list;
+    }
 
 /*  THIS METHOD WORKS
 
@@ -60,9 +66,8 @@ public class ServerPhotoController {
      * @throws IOException
      */
     @RequestMapping(value = "/result", method = RequestMethod.POST)
-    public String doUpload(MultipartFile file) throws IOException {
+    public String doUpload(MultipartFile file, @ModelAttribute("photo") Photo photo) throws IOException {
         if (file != null) {
-            Photo photo = new Photo();
             photo.setName(file.getOriginalFilename());
             photo.setImage(file.getBytes());
             photoService.savePhoto(photo);
