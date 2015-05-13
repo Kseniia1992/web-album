@@ -61,14 +61,7 @@
     </table>
 </div>
 
-<script>
-    var app = angular.module('webAlbum', []);
-    app.controller('photoCtrl', function($scope, $http) {
-        $scope.list = null;
-        $http.get("/web-album/result")
-                .success(function (data) {$scope.list = data;});
-    });
-</script>
+<script src="js/app.js"></script>
 
 </body>
 </html>

@@ -38,7 +38,7 @@ public class ServerPhotoController {
      * REST method sends json to client
      * @return
      */
-    @RequestMapping(value = "/result", method = RequestMethod.GET)
+    @RequestMapping(value = "/result", method = RequestMethod.GET, produces="application/json")
     @ResponseBody
     public List<Photo> showPhotosInfo(){
         return photoService.getAllPageble();
